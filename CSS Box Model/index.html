@@ -9,50 +9,53 @@
 
 <body>
     
-    <div id="parent">
-        <div id="child">
-            <p>asdasdasdas</p>
-            <p>adsasdasdas</p>
-            <p>asdadadasdasdada</p>
+    <div class="parent">
+        Parent 1
+        <div class="child">
+            <p>String 1</p>
+            <p>String 2</p>
+            <p>String 3</p>
         </div>
-        <div id="child">
-            <p>asdasdasdas</p>
-            <p>adsasdasdas</p>
-            <p>asdadadasdasdada</p>
+        <div class="child">
+            <p>String 1</p>
+            <p>String 2</p>
+            <p>String 3</p>
         </div>
     </div>
-    <div id="parent">
-        <div id="child">
-            <p>asdasdasdas</p>
-            <p>adsasdasdas</p>
-            <p>asdadadasdasdada</p>
+    <div class="parent">
+        Parent 2
+        <div class="child">
+            <p>String 1</p>
+            <p>String 2</p>
+            <p>String 3</p>
         </div>
-        <div id="child">
-            <p>asdasdasdas</p>
-            <p>adsasdasdas</p>
-            <p>asdadadasdasdada</p>
+        <div class="child">
+            <p>String 1</p>
+            <p>String 2</p>
+            <p>String 3</p>
         </div>
     
     </div>
 
 </body>
 <style>
-    #parent {
+    .parent {
+        box-sizing:border-box;
         width: 100%;
-        display: inline;
+        display: box;
         margin: 4px;
         background-color: rgb(255, 255, 255);
         padding: 20px;
         border: 10px solid rgb(84, 178, 255) ;
     }
 
-    #child {
-        display: inline;
+    .child {
+        display: box;
         box-sizing:content-box;
-        background:linear-gradient(to top, rgb(255, 255, 255) 20%, rgb(105, 177, 245) 50%);
+        background:linear-gradient(to right , rgb(255, 255, 255) 0%, rgb(105, 177, 245) 100%);
         margin: 10px;
         padding: 10px;
-        border: 4px solid red;
+        border: 2px solid rgb(0, 140, 255);
     }
 </style>
 
