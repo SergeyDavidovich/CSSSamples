@@ -6,28 +6,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style type="text/css">
+        .calc-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 5px;
+        }
+        
+        .display {
+            grid-column: 1/span 4;
+        }
+        
+        .clear {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        
+        .backspace {
+            grid-row: 2/3;
+        }
+        
+        .percentage {
+            grid-row: 2/3;
+        }
+        
+        .sum {
+            grid-row: 5/6;
+        }
+        
+        .subtract {
+            grid-row: 4/5;
+        }
+        
+        .division {
+            grid-row: 2/3
+        }
+        
+        .multiplication {
+            grid-row: 3/4;
+        }
+        
+        .one {
+            grid-row: 5/6;
+        }
+        
+        .two {
+            grid-row: 5/6;
+        }
+        
+        .three {
+            grid-row: 5/6;
+        }
+        
+        .four {
+            grid-row: 4/5;
+        }
+        
+        .five {
+            grid-row: 4/5;
+        }
+        
+        .six {
+            grid-row: 4/5;
+        }
+        
+        .seven {
+            grid-row: 3/4;
+        }
+        
+        .eight {
+            grid-row: 3/4;
+        }
+        
+        .nine {
+            grid-row: 3/4;
+        }
+        
+        .zero {
+            grid-row: 6/7;
+            grid-column: 2/3;
+        }
+        
+        .sign {
+            grid-row: 6/7;
+        }
+        
+        .point {
+            grid-row: 6/7;
+        }
+    </style>
 </head>
 
 <body>
     <div class="calc-container">
-        <input type="text">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>0</button>
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>/</button>
-        <button>.</button>
-        <button>C</button>
-        <button>&lt;-</button>
+        <input class="display" type="text">
+        <button class="backspace deletion">&lt;-</button>
+        <button class="one num">1</button>
+        <button class="two num">2</button>
+        <button class="three num">3</button>
+        <button class="four num">4</button>
+        <button class="five num">5</button>
+        <button class="six num">6</button>
+        <button class="seven num">7</button>
+        <button class="eight num">8</button>
+        <button class="nine num">9</button>
+        <button class="zero num">0</button>
+        <button class="percentage operation">%</button>
+        <button class="sum operation">+</button>
+        <button class="subtract operation">-</button>
+        <button class="multiplication operation">*</button>
+        <button class="division operation">/</button>
+        <button class="sign">+/-</button>
+        <button class="point num">.</button>
+        <button class="clear deletion">C</button>
+        <button class="result">=</button>
     </div>
 </body>
 
