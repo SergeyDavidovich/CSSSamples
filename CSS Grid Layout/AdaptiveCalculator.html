@@ -8,119 +8,132 @@
     <title>Document</title>
     <style type="text/css">
         .calc-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            gap: 5px;
+            display: flex;
+            flex-direction: column;
         }
         
         .display {
-            grid-column: 1/span 4;
+            display: grid;
         }
         
-        .clear {
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 5px;
+        }
+        
+        #clear {
             grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        
+        #backspace {
+            grid-row: 1/2;
+        }
+        
+        #percentage {
+            grid-row: 1/2;
+        }
+        
+        #sum {
+            grid-row: 4/5;
+        }
+        
+        #subtract {
+            grid-row: 3/4;
+        }
+        
+        #division {
+            grid-row: 1/2
+        }
+        
+        #multiplication {
             grid-row: 2/3;
         }
         
-        .backspace {
+        #one {
+            grid-row: 4/5;
+        }
+        
+        #two {
+            grid-row: 4/5;
+        }
+        
+        #three {
+            grid-row: 4/5;
+        }
+        
+        #four {
+            grid-row: 3/4;
+        }
+        
+        #five {
+            grid-row: 3/4;
+        }
+        
+        #six {
+            grid-row: 3/4;
+        }
+        
+        #seven {
             grid-row: 2/3;
         }
         
-        .percentage {
+        #eight {
             grid-row: 2/3;
         }
         
-        .sum {
+        #nine {
+            grid-row: 2/3;
+        }
+        
+        #zero {
             grid-row: 5/6;
-        }
-        
-        .subtract {
-            grid-row: 4/5;
-        }
-        
-        .division {
-            grid-row: 2/3
-        }
-        
-        .multiplication {
-            grid-row: 3/4;
-        }
-        
-        .one {
-            grid-row: 5/6;
-        }
-        
-        .two {
-            grid-row: 5/6;
-        }
-        
-        .three {
-            grid-row: 5/6;
-        }
-        
-        .four {
-            grid-row: 4/5;
-        }
-        
-        .five {
-            grid-row: 4/5;
-        }
-        
-        .six {
-            grid-row: 4/5;
-        }
-        
-        .seven {
-            grid-row: 3/4;
-        }
-        
-        .eight {
-            grid-row: 3/4;
-        }
-        
-        .nine {
-            grid-row: 3/4;
-        }
-        
-        .zero {
-            grid-row: 6/7;
             grid-column: 2/3;
         }
         
-        .sign {
-            grid-row: 6/7;
+        #sign {
+            grid-row: 5/6;
         }
         
-        .point {
-            grid-row: 6/7;
+        #point {
+            grid-row: 5/6;
+        }
+        
+        #result {
+            grid-row: 5/6;
         }
     </style>
 </head>
 
 <body>
     <div class="calc-container">
-        <input class="display" type="text">
-        <button class="backspace deletion">&lt;-</button>
-        <button class="one num">1</button>
-        <button class="two num">2</button>
-        <button class="three num">3</button>
-        <button class="four num">4</button>
-        <button class="five num">5</button>
-        <button class="six num">6</button>
-        <button class="seven num">7</button>
-        <button class="eight num">8</button>
-        <button class="nine num">9</button>
-        <button class="zero num">0</button>
-        <button class="percentage operation">%</button>
-        <button class="sum operation">+</button>
-        <button class="subtract operation">-</button>
-        <button class="multiplication operation">*</button>
-        <button class="division operation">/</button>
-        <button class="sign">+/-</button>
-        <button class="point num">.</button>
-        <button class="clear deletion">C</button>
-        <button class="result">=</button>
+        <div class="display">
+            <input type="text">
+        </div>
+        <div class="keyboard">
+            <button id="backspace" class="deletion">&lt;-</button>
+            <button id="one" class="num">1</button>
+            <button id="two" class="num">2</button>
+            <button id="three" class="num">3</button>
+            <button id="four" class="num">4</button>
+            <button id="five" class="num">5</button>
+            <button id="six" class="num">6</button>
+            <button id="seven" class="num">7</button>
+            <button id="eight" class="num">8</button>
+            <button id="nine" class="num">9</button>
+            <button id="zero" class="num">0</button>
+            <button id="percentage" class="operation">%</button>
+            <button id="sum" class="operation">+</button>
+            <button id="subtract" class="operation">-</button>
+            <button id="multiplication" class="operation">*</button>
+            <button id="division" class="operation">/</button>
+            <button id="sign" class="operation">+/-</button>
+            <button id="point" class="num">.</button>
+            <button id="clear" class="deletion">C</button>
+            <button id="result">=</button>
+        </div>
     </div>
 </body>
 
