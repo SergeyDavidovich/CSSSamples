@@ -12,8 +12,18 @@
             flex-direction: column;
         }
         
-        .display {
-            display: grid;
+        .display>label {
+            display: block;
+            text-align: right;
+            border-width: 0.5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: green;
+            border-color: black;
+            border-radius: 5px;
         }
         
         .keyboard {
@@ -110,7 +120,9 @@
 <body>
     <div class="calc-container">
         <div class="display">
-            <input type="text">
+            <label>
+                1234567890.123
+            </label>
         </div>
         <div class="keyboard">
             <button id="backspace" class="deletion">&lt;-</button>
