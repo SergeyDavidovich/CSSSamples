@@ -7,102 +7,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        .calc-container {
-            display: flex;
-            flex-direction: column;
+        body {
+            background-color: yellow;
         }
         
-        .display {
-            display: grid;
+        button {
+            color: white;
+        }
+        
+        .memory {
+            background-color: green;
+        }
+        
+        .deletion {
+            background-color: orange;
+        }
+        
+        #scale-off {
+            background-color: red;
+        }
+        
+        .operation {
+            background-color: blue;
+        }
+        
+        .num {
+            background-color: cornflowerblue;
+        }
+        
+        #const {
+            background-color: gray;
+        }
+        
+        .calc-container {
+            background-color: aqua;
+            padding: 5px;
+        }
+        
+        .display>label {
+            display: block;
+            text-align: right;
+            border-width: 0.5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: goldenrod;
+            border-color: black;
+            color: black;
         }
         
         .keyboard {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
             gap: 5px;
         }
         
-        #clear {
-            grid-column: 1/2;
+        .first-row {
             grid-row: 1/2;
         }
         
-        #backspace {
-            grid-row: 1/2;
-        }
-        
-        #percentage {
-            grid-row: 1/2;
-        }
-        
-        #sum {
-            grid-row: 4/5;
-        }
-        
-        #subtract {
-            grid-row: 3/4;
-        }
-        
-        #division {
-            grid-row: 1/2
-        }
-        
-        #multiplication {
+        .second-row {
             grid-row: 2/3;
         }
         
-        #one {
-            grid-row: 4/5;
-        }
-        
-        #two {
-            grid-row: 4/5;
-        }
-        
-        #three {
-            grid-row: 4/5;
-        }
-        
-        #four {
+        .third-row {
             grid-row: 3/4;
         }
         
-        #five {
-            grid-row: 3/4;
+        .fourth-row {
+            grid-row: 4/5;
         }
         
-        #six {
-            grid-row: 3/4;
-        }
-        
-        #seven {
-            grid-row: 2/3;
-        }
-        
-        #eight {
-            grid-row: 2/3;
-        }
-        
-        #nine {
-            grid-row: 2/3;
-        }
-        
-        #zero {
-            grid-row: 5/6;
-            grid-column: 2/3;
-        }
-        
-        #sign {
+        .fifth-row {
             grid-row: 5/6;
         }
         
-        #point {
-            grid-row: 5/6;
-        }
-        
-        #result {
-            grid-row: 5/6;
+        .sixth-row {
+            grid-row: 6/7;
         }
     </style>
 </head>
@@ -110,29 +94,40 @@
 <body>
     <div class="calc-container">
         <div class="display">
-            <input type="text">
+            <label>
+                1234567890.123
+            </label>
         </div>
         <div class="keyboard">
-            <button id="backspace" class="deletion">&lt;-</button>
-            <button id="one" class="num">1</button>
-            <button id="two" class="num">2</button>
-            <button id="three" class="num">3</button>
-            <button id="four" class="num">4</button>
-            <button id="five" class="num">5</button>
-            <button id="six" class="num">6</button>
-            <button id="seven" class="num">7</button>
-            <button id="eight" class="num">8</button>
-            <button id="nine" class="num">9</button>
-            <button id="zero" class="num">0</button>
-            <button id="percentage" class="operation">%</button>
-            <button id="sum" class="operation">+</button>
-            <button id="subtract" class="operation">-</button>
-            <button id="multiplication" class="operation">*</button>
-            <button id="division" class="operation">/</button>
-            <button id="sign" class="operation">+/-</button>
-            <button id="point" class="num">.</button>
-            <button id="clear" class="deletion">C</button>
-            <button id="result">=</button>
+            <button id="memory-plus" class="memory first-row">M+</button>
+            <button id="memory-clear" class="memory first-row">MC</button>
+            <button id="clear" class="deletion first-row">C</button>
+            <button id="backspace" class="deletion first-row">Back</button>
+
+            <button id="memory-read" class="memory second-row">MR</button>
+            <button id="scale-off" class="operation second-row">%OFF</button>
+            <button id="sign" class="operation second-row">±</button>
+            <button id="division" class="operation second-row">÷</button>
+
+            <button id="seven" class="num third-row">7</button>
+            <button id="eight" class="num third-row">8</button>
+            <button id="nine" class="num third-row">9</button>
+            <button id="multiplication" class="operation third-row">×</button>
+
+            <button id="four" class="num fourth-row">4</button>
+            <button id="five" class="num fourth-row">5</button>
+            <button id="six" class="num fourth-row">6</button>
+            <button id="subtract" class="operation fourth-row">-</button>
+
+            <button id="one" class="num fifth-row">1</button>
+            <button id="two" class="num fifth-row">2</button>
+            <button id="three" class="num fifth-row">3</button>
+            <button id="sum" class="operation fifth-row">+</button>
+
+            <button id="const" class="sixth-row">CONST</button>
+            <button id="zero" class="num sixth-row">0</button>
+            <button id="point" class="num sixth-row">,</button>
+            <button id="result" class="operation sixth-row">=</button>
         </div>
     </div>
 </body>
