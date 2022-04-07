@@ -10,11 +10,11 @@
 
 <body>
     <div class="wrapper">
-        <div id="title">
+        <div id="header">
             Calculator
         </div>
         <div id="indicator">
-            <label>1234567890</label>
+            <label>-0,123456789</label>
         </div>
         <div id="keyboard">
             <div><button class="memory">M+</button></div>
@@ -57,9 +57,17 @@
         height: 120px;
         font-size: 0.6em;
         color: white;
-        border:solid 0px rgb(133, 133, 133);
+        border: solid 0px rgb(133, 133, 133);
         border-radius: 6px;
-        font-size: 2.0em;
+        font-size: 1.8em;
+    }
+    @media screen and ( min-width: 380px){
+        .wrapper{
+            width: 100%;
+        }
+        button{
+            font-size: 0.9rem;
+        }
     }
 
     button:hover {
@@ -69,15 +77,15 @@
     .wrapper {
         width: 50%;
         margin: 2px 20px 2px 20px;
-        padding: 30px;
+        padding: 40px;
         background-color: rgb(202, 202, 202);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         border: solid 1px rgb(163, 163, 163);
         border-radius: 12px;
-        box-shadow: 2px 2px 4px rgb(126, 126, 126) ;
+        box-shadow: 2px 2px 4px rgb(126, 126, 126);
     }
 
-    #title {
+    #header {
         padding-left: 0px;
         font-size: 2em;
         color: black;
@@ -91,6 +99,7 @@
         font-size: 4em;
         border-radius: 6px;
     }
+
     #keyboard {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
