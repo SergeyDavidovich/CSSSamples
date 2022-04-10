@@ -11,7 +11,7 @@
 <body>
     <div class="div1">
         <div class="div2">
-            <p>ASDFGHJKL</p>
+            <label>ASDF GHJKL</label>
         </div>
     </div>
 </body>
@@ -19,12 +19,15 @@
 <style>
     * {
         box-sizing: border-box;
+        --font-size: 3m;
+        font-family: 'Arial';
     }
 
     body {
         background-color: lightgray;
         height: 100%;
         width: 100%;
+        font-size: var(--font-size);
     }
 
     .div1 {
@@ -47,12 +50,11 @@
         bottom: 100px;
         left: 100px;
         right: 100px;
+        padding: 10px;
         
-        display: flex;
+        display: grid;
         align-items: center;
-        justify-content: center;
-
-        font: 2em sans-serif;
+        justify-content:center;
     }
 </style>
 
