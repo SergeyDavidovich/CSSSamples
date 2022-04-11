@@ -23,14 +23,19 @@
             /* End color resources */
         }
         body {
+            display: flex;
+            position: relative;
+            top: 25px;
+            align-items: center;
+            vertical-align: middle;
             background-color: var(--color-body);
         }
         .calc-container {
             background-color: rgb(245, 245, 245);
-            margin-top: 25px;
             padding: 25px;
             box-shadow: 1px 5px 5px rgb(155, 155, 155);
-            width: 80%;
+            width: 600px;
+            margin: auto;
         }
         .display {
             display: flex;
@@ -79,7 +84,6 @@
         }
         @media screen and (min-width:612px) {
             .calc-container{
-                width: 100%;
                 margin: 0;
          }
         }
