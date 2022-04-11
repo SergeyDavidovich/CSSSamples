@@ -5,148 +5,116 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
+
+    <style type="text/css">
+        * {
+            /* Color resources */
+            --color-button-memory:green;
+            --color-button-back: orange;
+            --color-button-figure:rgb(0, 102, 255);
+            --color-button-off:red;
+            --color-button-const:black;
+            --color-button-operator:rgb(0, 49, 139);
+            --color-button-fore:white;
+            --color-display-back:black;
+            --color--display-fore:rgb(208, 255, 0);
+            --color-body:lightgrey;
+            /* End color resources */
+        }
+        body {
+            background-color: var(--color-body);
+        }
+        .calc-container {
+            background-color: rgb(245, 245, 245);
+            margin-top: 25px;
+            padding: 25px;
+            box-shadow: 1px 5px 5px rgb(155, 155, 155);
+            width: 80%;
+        }
+        .display {
+            position: relative;
+            height: 60px;
+            margin-bottom: 4px;
+            padding: 10px;
+            background-color: var(--color-display-back);
+            border-radius: 4px;
+        }
+        #indicator {
+            width: 100%;
+            display: block;
+            text-align: right;
+            font-size: 3.5em;
+            background-color: var(--color--display-back);
+            color: var(--color--display-fore)
+        }
+        .keyboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 5px;
+        }
+        button {
+            color: var(--color-button-fore);
+            font-size: 2.0em;
+            height: 90px;
+            border: none;
+            border-radius: 4px;
+        }
+        @media screen and (max-width: 600px){
+         button{
+             font-size: 1.8em;   
+         }
+         #indicator{
+             font-size: 20px;
+         }
+        }
+        @media screen and (max-width:612px) {
+            .calc-container{
+                width: 100%;
+                margin: 0;
+         }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div id="header">
-            Calculator
+    <div class="calc-container">
+        <div class="display">
+            <input id="indicator" type="text" disabled value="0,1234567890" />
         </div>
-        <div id="indicator">
-            <label>-0,123456789</label>
-        </div>
-        <div id="keyboard">
-            <div><button class="memory">M+</button></div>
-            <div><button class="memory">MC</button></div>
-            <div><button class="back">C</button></div>
-            <div><button class="back">BACK</button></div>
-            <div><button class="memory">MR</button></div>
-            <div><button class="off">%OFF</button></div>
-            <div><button class="operator">&#177;</button></div>
-            <div><button class="operator">&#247;</button></div>
-            <div><button class="figure">7</button></div>
-            <div><button class="figure">8</button></div>
-            <div><button class="figure">9</button></div>
-            <div><button class="operator">&#215;</button></div>
-            <div><button class="figure">4</button></div>
-            <div><button class="figure">5</button></div>
-            <div><button class="figure">6</button></div>
-            <div><button class="operator">&#8722;</button></div>
-            <div><button class="figure">1</button></div>
-            <div><button class="figure">2</button></div>
-            <div><button class="figure">3</button></div>
-            <div><button class="operator">&#43;</button></div>
-            <div><button class="const">CONST</button></div>
-            <div><button class="figure">0</button></div>
-            <div><button class="figure">,</button></div>
-            <div><button class="operator">&#61;</button></div>
+        <div class="keyboard">
+            <button style="background-color: var(--color-button-memory);">M+</button> 
+            <button style="background-color: var(--color-button-memory);">MR</button> 
+            <button style="background-color: var(--color-button-back);">C</button> 
+            <button style="background-color: var(--color-button-back);">MC</button> 
+            
+            <button style="background-color: var(--color-button-memory);">MC</button> 
+            <button style="background-color: var(--color-button-off);">%OFF</button>
+            <button style="background-color: var(--color-button-operator);">±</button>
+            <button style="background-color: var(--color-button-operator);">÷</button>
+
+            <button style="background-color: var(--color-button-figure);">7</button>
+            <button style="background-color: var(--color-button-figure);">8</button>
+            <button style="background-color: var(--color-button-figure);">9</button>
+            <button style="background-color: var(--color-button-operator);">×</button>
+
+            <button style="background-color: var(--color-button-figure);">4</button>
+            <button style="background-color: var(--color-button-figure);">5</button>
+            <button style="background-color: var(--color-button-figure);">6</button>
+            <button style="background-color: var(--color-button-operator);">-</button>
+
+            <button style="background-color: var(--color-button-figure);">1</button>
+            <button style="background-color: var(--color-button-figure);">2</button>
+            <button style="background-color: var(--color-button-figure);">3</button>
+            <button style="background-color: var(--color-button-operator);">+</button>
+
+            <button style="background-color: var(--color-button-const);">CONST</button>
+            <button style="background-color: var(--color-button-figure);">0</button>
+            <button style="background-color: var(--color-button-figure);">,</button>  
+            <button style="background-color: var(--color-button-operator);">=</button>          
         </div>
     </div>
 </body>
-<style>
-    body {
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        background-color: rgb(164, 172, 153);
-    }
-
-    button {
-        width: 100%;
-        height: 120px;
-        font-size: 0.4em;
-        color: white;
-        border: solid 0px rgb(133, 133, 133);
-        border-radius: 6px;
-        font-size: 1.6em;
-    }
-
-    @media screen and (min-width:800px) {
-        body {
-            background-color: rgb(141, 141, 141);
-        }
-
-        .wrapper {
-            width: 100%;
-        }
-
-        button {
-            font-size: 2em;
-        }
-
-        #indicator>label {
-            font-size: 2. 4em;
-        }
-    }
-
-    button:hover {
-        background-color: rgb(155, 155, 155);
-    }
-
-    .wrapper {
-        position: absolute;
-        width: 50%;
-        margin: 2px 20px 2px 20px;
-        padding: 40px;
-        background-color: rgb(202, 202, 202);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        border: solid 1px rgb(163, 163, 163);
-        border-radius: 12px;
-        box-shadow: 2px 2px 4px rgb(126, 126, 126);
-    }
-
-    #header {
-        padding-left: 0px;
-        font-size: 2em;
-        color: black;
-    }
-
-    #indicator {
-        padding-right: 10px;
-        background-color: rgb(0, 0, 0);
-        color: aqua;
-        text-align: right;
-        font-size: 2em;
-        border-radius: 6px;
-    }
-
-    #keyboard {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 4px;
-        margin-top: 4px;
-        background-color: rgb(202, 202, 202);
-    }
-
-    #keyboard>div {
-        width: auto;
-    }
-
-    .memory {
-        background-color: green;
-    }
-
-    .back {
-        background-color: orange;
-    }
-
-    .off {
-        background-color: red;
-    }
-
-    .operator {
-        background-color: rgb(54, 87, 177);
-    }
-
-    .figure {
-        background-color: rgb(43, 151, 245);
-    }
-
-    .const {
-        background-color: black;
-    }
-</style>
 
 </html>
