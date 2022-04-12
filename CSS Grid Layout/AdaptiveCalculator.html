@@ -7,13 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
+        * {
+            /* Color resources */
+            --color-button-memory: green;
+            --color-button-back: orange;
+            --color-button-figure: rgb(0, 102, 255);
+            --color-button-off: red;
+            --color-button-const: black;
+            --color-button-operator: rgb(0, 49, 139);
+            --color-button-fore: white;
+            --color-display-back: black;
+            --color-display-fore: rgb(208, 255, 0);
+            --color-calc-back: lightgrey;
+            --color-body: rgb(173, 196, 238);
+            /* End color resources */
+        }
+        
         body {
-            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--color-body);
+            padding-top: 50px;
         }
         
         button {
             color: white;
-            font-size: 2.0em;
+            font-size: 1.1em;
             height: 90px;
             border: none;
             border-radius: 4px;
@@ -22,30 +42,6 @@
         button:hover {
             color: red;
             background-color: lightgray!important;
-        }
-        
-        .memory {
-            background-color: green;
-        }
-        
-        .deletion {
-            background-color: orange;
-        }
-        
-        #scale-off {
-            background-color: red;
-        }
-        
-        .operation {
-            background-color: blue;
-        }
-        
-        .num {
-            background-color: cornflowerblue;
-        }
-        
-        #const {
-            background-color: gray;
         }
         
         .calc-container {
@@ -73,28 +69,13 @@
             gap: 5px;
         }
         
-        .first-row {
-            grid-row: 1/2;
-        }
-        
-        .second-row {
-            grid-row: 2/3;
-        }
-        
-        .third-row {
-            grid-row: 3/4;
-        }
-        
-        .fourth-row {
-            grid-row: 4/5;
-        }
-        
-        .fifth-row {
-            grid-row: 5/6;
-        }
-        
-        .sixth-row {
-            grid-row: 6/7;
+        @media screen and (min-width: 600px) {
+            button {
+                font-size: 1.5em;
+            }
+            #indicator {
+                font-size: 50px;
+            }
         }
     </style>
 </head>
@@ -107,35 +88,35 @@
             </label>
         </div>
         <div class="keyboard">
-            <button id="memory-plus" class="memory first-row">M+</button>
-            <button id="memory-clear" class="memory first-row">MC</button>
-            <button id="clear" class="deletion first-row">C</button>
-            <button id="backspace" class="deletion first-row">Back</button>
+            <button id="memory-plus" style="background-color: var(--color-button-memory);" class="memory first-row">M+</button>
+            <button id="memory-clear" style="background-color: var(--color-button-memory);" class="memory first-row">MC</button>
+            <button id="clear" style="background-color: var(--color-button-back);" class="deletion first-row">C</button>
+            <button id="backspace" style="background-color: var(--color-button-back);" class="deletion first-row">Back</button>
 
-            <button id="memory-read" class="memory second-row">MR</button>
-            <button id="scale-off" class="operation second-row">%OFF</button>
-            <button id="sign" class="operation second-row">±</button>
-            <button id="division" class="operation second-row">÷</button>
+            <button id="memory-read" style="background-color: var(--color-button-memory);" class="memory second-row">MR</button>
+            <button id="scale-off" style="background-color: var(--color-button-off);" class="operation second-row">%OFF</button>
+            <button id="sign" style="background-color: var(--color-button-operator);" class="operation second-row">±</button>
+            <button id="division" style="background-color: var(--color-button-operator);" class="operation second-row">÷</button>
 
-            <button id="seven" class="num third-row">7</button>
-            <button id="eight" class="num third-row">8</button>
-            <button id="nine" class="num third-row">9</button>
-            <button id="multiplication" class="operation third-row">×</button>
+            <button id="seven" style="background-color: var(--color-button-figure);" class="num third-row">7</button>
+            <button id="eight" style="background-color: var(--color-button-figure);" class="num third-row">8</button>
+            <button id="nine" style="background-color: var(--color-button-figure);" class="num third-row">9</button>
+            <button id="multiplication" style="background-color: var(--color-button-operator);" class="operation third-row">×</button>
 
-            <button id="four" class="num fourth-row">4</button>
-            <button id="five" class="num fourth-row">5</button>
-            <button id="six" class="num fourth-row">6</button>
-            <button id="subtract" class="operation fourth-row">-</button>
+            <button id="four" style="background-color: var(--color-button-figure);" class="num fourth-row">4</button>
+            <button id="five" style="background-color: var(--color-button-figure);" class="num fourth-row">5</button>
+            <button id="six" style="background-color: var(--color-button-figure);" class="num fourth-row">6</button>
+            <button id="subtract" style="background-color: var(--color-button-operator);" class="operation fourth-row">-</button>
 
-            <button id="one" class="num fifth-row">1</button>
-            <button id="two" class="num fifth-row">2</button>
-            <button id="three" class="num fifth-row">3</button>
-            <button id="sum" class="operation fifth-row">+</button>
+            <button id="one" style="background-color: var(--color-button-figure);" class="num fifth-row">1</button>
+            <button id="two" style="background-color: var(--color-button-figure);" class="num fifth-row">2</button>
+            <button id="three" style="background-color: var(--color-button-figure);" class="num fifth-row">3</button>
+            <button id="sum" style="background-color: var(--color-button-operator);" class="operation fifth-row">+</button>
 
-            <button id="const" class="sixth-row">CONST</button>
-            <button id="zero" class="num sixth-row">0</button>
-            <button id="point" class="num sixth-row">,</button>
-            <button id="result" class="operation sixth-row">=</button>
+            <button id="const" style="background-color: var(--color-button-const);" class="sixth-row">CONST</button>
+            <button id="zero" style="background-color: var(--color-button-figure);" class="num sixth-row">0</button>
+            <button id="point" style="background-color: var(--color-button-figure);" class="num sixth-row">,</button>
+            <button id="result" style="background-color: var(--color-button-operator);" class="operation sixth-row">=</button>
         </div>
     </div>
 </body>
