@@ -10,80 +10,92 @@
     <style type="text/css">
         * {
             /* Color resources */
-            --color-button-memory:green;
+            --color-button-memory: green;
             --color-button-back: orange;
-            --color-button-figure:rgb(0, 102, 255);
-            --color-button-off:red;
-            --color-button-const:black;
-            --color-button-operator:rgb(0, 49, 139);
-            --color-button-fore:white;
-            --color-display-back:black;
-            --color--display-fore:rgb(208, 255, 0);
-            --color-body:lightgrey;
+            --color-button-figure: rgb(0, 102, 255);
+            --color-button-off: red;
+            --color-button-const: black;
+            --color-button-operator: rgb(0, 49, 139);
+            --color-button-fore: white;
+            --color-display-back: black;
+            --color-display-fore: rgb(208, 255, 0);
+            --color-calc-back:lightgrey;
+            --color-body: rgb(173, 196, 238);
             /* End color resources */
         }
+
         body {
             display: flex;
             justify-content: center;
+            align-items: center;
             background-color: var(--color-body);
+            padding-top: 30px;
         }
+
         .calc-container {
-            position: absolute;
-            background-color: rgb(245, 245, 245);
-            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--color-calc-back);
+            padding: 20px;
             box-shadow: 1px 5px 5px rgb(155, 155, 155);
-            width: 600px;
-            top: 25px;
+            height: 90vh;
         }
+
         .display {
             display: flex;
             position: relative;
-            height: 60px;
             margin-bottom: 4px;
             padding: 10px;
             background-color: var(--color-display-back);
             border-radius: 4px;
         }
+
         #indicator {
-            width: 100%;
             display: flex;
-            vertical-align:auto;
+            align-items: center;
             border: solid 1px white;
-            border-radius: 4px;;
+            border-radius: 4px;
             text-align: right;
             font-size: 30px;
             background-color: var(--color--display-back);
-            color: var(--color--display-fore)
+            color: var(--color-display-fore);
+            padding: 20px;
         }
+
         .keyboard {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: auto;
             gap: 5px;
+            height: 100%;
         }
+
         button {
             color: var(--color-button-fore);
             font-size: 1.1em;
-            height: 90px;
+            height: 100%;
             border: none;
             border-radius: 4px;
         }
-        button:hover{
+
+        button:hover {
             color: red;
-            background-color: lightgray!important;
         }
-        @media screen and (min-width: 600px){
-         button{
-             font-size: 1.8em;   
-         }
-         #indicator{
-             font-size: 50px;
-         }
+
+        @media screen and (min-width: 600px) {
+            button {
+                font-size: 1.8em;
+            }
+
+            #indicator {
+                font-size: 50px;
+            }
         }
+
         @media screen and (min-width:612px) {
-            .calc-container{
+            .calc-container {
                 margin: 0;
-         }
+            }
         }
     </style>
 </head>
@@ -94,12 +106,12 @@
             <input id="indicator" type="text" disabled value="-0,123456789" />
         </div>
         <div class="keyboard">
-            <button style="background-color: var(--color-button-memory);">M+</button> 
-            <button style="background-color: var(--color-button-memory);">MR</button> 
-            <button style="background-color: var(--color-button-back);">C</button> 
-            <button style="background-color: var(--color-button-back);">MC</button> 
-            
-            <button style="background-color: var(--color-button-memory);">MC</button> 
+            <button style="background-color: var(--color-button-memory);">M+</button>
+            <button style="background-color: var(--color-button-memory);">MR</button>
+            <button style="background-color: var(--color-button-back);">C</button>
+            <button style="background-color: var(--color-button-back);">MC</button>
+
+            <button style="background-color: var(--color-button-memory);">MC</button>
             <button style="background-color: var(--color-button-off);">%OFF</button>
             <button style="background-color: var(--color-button-operator);">±</button>
             <button style="background-color: var(--color-button-operator);">÷</button>
@@ -121,8 +133,8 @@
 
             <button style="background-color: var(--color-button-const);">CONST</button>
             <button style="background-color: var(--color-button-figure);">0</button>
-            <button style="background-color: var(--color-button-figure);">,</button>  
-            <button style="background-color: var(--color-button-operator);">=</button>          
+            <button style="background-color: var(--color-button-figure);">,</button>
+            <button style="background-color: var(--color-button-operator);">=</button>
         </div>
     </div>
 </body>
