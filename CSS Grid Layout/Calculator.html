@@ -1,16 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Document</title>
+</head>
 
-    <style type="text/css">
-        * {
-            /* Color resources */
-            --color-button-memory: green;
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input class="indicator" type="text" value="-0.123456789" disabled/>
+        </div>
+        <div class="keyboard">
+            <div class="child">
+                <button style="background-color: var(--color-button-memory);">M+</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-memory);">MC</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-back);">C</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-back);">BACK</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-memory);">MR</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-off);">%OFF</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-operator);">&plusmn;</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-operator);">&divide;</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">7</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">8</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">9</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-operator);">&times;</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">4</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">5</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">6</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-operator);">&minus;</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">1</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">2</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">3</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-operator);">&plus;</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-const);">CONST</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">0</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-figure);">&sbquo;</button>
+            </div>
+            <div class="child">
+                <button style="background-color: var(--color-button-operator);">&equals;</button>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+         /* Color resources */
+         --color-button-memory: green;
             --color-button-back: orange;
             --color-button-figure: rgb(0, 102, 255);
             --color-button-off: red;
@@ -22,121 +106,60 @@
             --color-calc-back:lightgrey;
             --color-body: rgb(173, 196, 238);
             /* End color resources */
-        }
+    }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--color-body);
-            padding-top: 30px;
-        }
+    body {
+        background-color: rgb(235, 235, 235);
+    }
 
-        .calc-container {
-            display: flex;
-            flex-direction: column;
-            background-color: var(--color-calc-back);
-            padding: 20px;
-            box-shadow: 1px 5px 5px rgb(155, 155, 155);
-            height: 90vh;
-        }
-
-        .display {
-            display: flex;
-            position: relative;
-            margin-bottom: 4px;
-            padding: 10px;
-            background-color: var(--color-display-back);
-            border-radius: 4px;
-        }
-
-        #indicator {
-            display: flex;
-            align-items: center;
-            border: solid 1px white;
-            border-radius: 4px;
-            text-align: right;
-            font-size: 30px;
-            background-color: var(--color--display-back);
-            color: var(--color-display-fore);
-            padding: 20px;
-        }
-
-        .keyboard {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: auto;
-            gap: 5px;
-            height: 100%;
-        }
-
-        button {
-            color: var(--color-button-fore);
-            font-size: 1.1em;
-            height: 100%;
-            border: none;
-            border-radius: 4px;
-        }
-
-        button:hover {
-            color: red;
-        }
-
-        @media screen and (min-width: 600px) {
-            button {
-                font-size: 1.8em;
-            }
-
-            #indicator {
-                font-size: 50px;
-            }
-        }
-
-        @media screen and (min-width:720px) {
-            .calc-container {
-                margin: 0;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="calc-container">
-        <div class="display">
-            <input id="indicator" type="text" disabled value="-0,123456789" />
-        </div>
-        <div class="keyboard">
-            <button style="background-color: var(--color-button-memory);">M+</button>
-            <button style="background-color: var(--color-button-memory);">MR</button>
-            <button style="background-color: var(--color-button-back);">C</button>
-            <button style="background-color: var(--color-button-back);">MC</button>
-
-            <button style="background-color: var(--color-button-memory);">MC</button>
-            <button style="background-color: var(--color-button-off);">%OFF</button>
-            <button style="background-color: var(--color-button-operator);">±</button>
-            <button style="background-color: var(--color-button-operator);">÷</button>
-
-            <button style="background-color: var(--color-button-figure);">7</button>
-            <button style="background-color: var(--color-button-figure);">8</button>
-            <button style="background-color: var(--color-button-figure);">9</button>
-            <button style="background-color: var(--color-button-operator);">×</button>
-
-            <button style="background-color: var(--color-button-figure);">4</button>
-            <button style="background-color: var(--color-button-figure);">5</button>
-            <button style="background-color: var(--color-button-figure);">6</button>
-            <button style="background-color: var(--color-button-operator);">-</button>
-
-            <button style="background-color: var(--color-button-figure);">1</button>
-            <button style="background-color: var(--color-button-figure);">2</button>
-            <button style="background-color: var(--color-button-figure);">3</button>
-            <button style="background-color: var(--color-button-operator);">+</button>
-
-            <button style="background-color: var(--color-button-const);">CONST</button>
-            <button style="background-color: var(--color-button-figure);">0</button>
-            <button style="background-color: var(--color-button-figure);">,</button>
-            <button style="background-color: var(--color-button-operator);">=</button>
-        </div>
-    </div>
-</body>
-
+    .calculator {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 0.2fr auto;
+        gap: 4px;
+        padding: 6px;
+        border: 1px solid rgb(185, 185, 185);
+        background-color: aliceblue;
+    }
+    .keyboard {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 4px;
+        height: 100%;
+        width: 100%;
+    }
+    .display {
+        height: 100%;
+        display: grid;
+        align-items: center;
+        background-color: black;
+        border-radius: 8px;
+    }
+    .indicator{
+        width: 100%;
+        text-align: right;
+        padding-right: 14px;
+        font-size: 3.0rem;
+        background-color: inherit;
+        color: aliceblue;
+    }
+    .child {
+        display: grid;
+        place-self: center;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    button {
+        background-color: rgb(14, 119, 180);
+        color: aliceblue;
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.6rem
+    }
+</style>
 </html>
