@@ -7,10 +7,13 @@
 
     <style type="text/css">
         body {
+            margin: 0;
+            height: 100vh;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: rgba(100, 100, 100, 0.5);
-            font-size: 3vw;
-            color: black;
+            font-size: 2em;
+            color: white;
         }
 
         .container {
@@ -70,10 +73,10 @@
         }
         @media (min-width:721px) {
             body>* {
-                color: white;
+                color: black;
             }
             .container {
-                grid-template-columns: 8em auto auto;
+                grid-template-columns: 20% 2fr 1fr;
                 grid-template-areas:
                 "nav header header"
                 "nav article ads"
